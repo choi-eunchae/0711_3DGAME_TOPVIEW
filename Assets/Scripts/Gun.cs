@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using UnityEngine;
 
 // 총을 구현
@@ -36,7 +36,9 @@ public class Gun : MonoBehaviour {
         gunAudioPlayer = GetComponent<AudioSource>();
         bulletLineRenderer = GetComponent<LineRenderer>();
 
+        //사용할 점을 두 개로 변경
         bulletLineRenderer.positionCount = 2;
+        //라인 랜더러를 비활성화
         bulletLineRenderer.enabled = false;
     }
 
