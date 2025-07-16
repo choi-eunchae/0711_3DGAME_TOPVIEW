@@ -98,6 +98,10 @@ public class StaticAgent : MonoBehaviour
         agent.isStopped = true;            // NavMesh 멈춤
         animator.SetFloat("Speed", 0);     // Speed 0으로 고정
         animator.SetTrigger(triggerName);  // 애니메이션 실행
+
+    //     // 애니메이션 길이만큼 기다린 뒤 자동 복구
+    // float animLength = animator.GetCurrentAnimatorStateInfo(0).length;
+    // Invoke(nameof(ResumeNavMeshAgent), animLength);
     }
 
     // 애니메이션 끝날 때 호출
