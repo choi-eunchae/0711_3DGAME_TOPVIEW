@@ -310,13 +310,13 @@ InputManager:
     axis: 0
     joyNum: 0
   - serializedVersion: 3
-    m_Name: Enable Debug Button 2
+    m_Name: Action1
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: backspace
+    positiveButton: q
     altNegativeButton: 
-    altPositiveButton: joystick button 9
+    altPositiveButton: 
     gravity: 0
     dead: 0
     sensitivity: 0
@@ -326,13 +326,13 @@ InputManager:
     axis: 0
     joyNum: 0
   - serializedVersion: 3
-    m_Name: Debug Reset
+    m_Name: Action2
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: left alt
+    positiveButton: w
     altNegativeButton: 
-    altPositiveButton: joystick button 1
+    altPositiveButton: 
     gravity: 0
     dead: 0
     sensitivity: 0
