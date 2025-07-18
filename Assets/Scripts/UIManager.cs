@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEngine.SceneManagement; // 씬 관리자 관련 코드
 using UnityEngine.UI; // UI 관련 코드
 using System.Collections;
@@ -29,7 +29,7 @@ public class UIManager : MonoBehaviour
     public GameObject gameoverUI; // 게임 오버시 활성화할 UI 
     public GameObject waveStartUI; // 웨이브 시작시 보여줄 UI
     public Text waveStartText; // 웨이브 시작 텍스트
-    private int previousWave=0;
+    private int previousWave=0; //이전 웨이브 저장
 
     // 탄약 텍스트 갱신
     public void UpdateAmmoText(int magAmmo, int remainAmmo)
@@ -54,6 +54,27 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    //중앙에 웨이브 텍스트 보여주기
+    public void ShowWaveStartUI(int waveNumber, float duration = 0.7f)
+    {
+        if (waveStartUI == null)
+    {
+        Debug.LogError("waveStartUI가 Inspector에 연결되어 있지 않습니다!");
+        return;
+    }
+
+        waveStartUI.SetActive(true);
+        waveStartText.text = "Wave " + waveNumber + " Start!";
+        StartCoroutine(HideWaveStartUIAfterDelay(duration));
+    }
+
+    private IEnumerator HideWaveStartUIAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        waveStartUI.SetActive(false);
+    }
+
+
     // 게임 오버 UI 활성화
     public void SetActiveGameoverUI(bool active)
     {
@@ -66,20 +87,4 @@ public class UIManager : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
-    
-    //중앙에 웨이브 텍스트 보여주기
-    public void ShowWaveStartUI(int waveNumber, float duration = 0.7f)
-    {
-        waveStartUI.SetActive(true);
-        waveStartText.text = "Wave " + waveNumber + " Start!";
-        StartCoroutine(HideWaveStartUIAfterDelay(duration));
-    }
-
-    private IEnumerator HideWaveStartUIAfterDelay(float delay)
-    {
-        yield return new WaitForSeconds(delay);
-        waveStartUI.SetActive(false);
-    }
-    
-
 }

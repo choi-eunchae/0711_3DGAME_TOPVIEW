@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 
 // 점수와 게임 오버 여부를 관리하는 게임 매니저
 public class GameManager : MonoBehaviour {
@@ -19,7 +19,6 @@ public class GameManager : MonoBehaviour {
         }
     }
 
-    private int previousWave=1;
     private static GameManager m_instance; // 싱글톤이 할당될 static 변수
 
     private int score = 0; // 현재 게임 점수
